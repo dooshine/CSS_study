@@ -5,24 +5,64 @@
 <head>
     <title>WEB2-CSS</title>
     <meta charset="utf-8">
+    <style>
+        a {
+            color:black;
+            text-decoration: none;
+        }
+        /* 내가 처음 해본 것, 안 됨 => class saw가 아니라 tag saw를 의미하기 때문
+        saw {
+            color:gray;
+        }
+        */
+        .saw {
+            color: gray;
+        }
+        /* 한 id값을 가지는 선택자는 유일해야 한다.(active id 값을 가지는 다른 존재가 없어야함) */
+        #active {
+            color: red;
+        }
+        h1 {
+           text-align: center;
+           margin: 0;
+           padding: 10px;
+        }
+        @media (min-width: 800px) {
+        #grid ol {
+            border-right: 2px black solid;
+            margin: 0;
+            padding: 12px;
+            margin-left: 12px;
+        }
+            #grid {
+                display: grid;
+                grid-template-columns: 120px 1fr;
+            }
+            #article {
+                margin-left: 12px;
+            }
+            h1 {
+                font-size: 50px;  /* px, large, %, larger, etc */
+                border-bottom: 2px black solid;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <h1><a href="index.html" title="WEB specification">WEB</a></h1>
-
-    <ol>
-        <li><a href="1.html" title="HTML specification">HTML</a></li>
-        <li><a href="2.CSS.html" title="CSS specification">CSS</a></li>
-        <li><a href="3.JavaScript.html" title="JavaScript specification">JavaScript</a></li>
-    </ol>
-
-    <h2>CSS이란 무엇인가?</h2>
-
-    <p>
-        HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 스타일시트 언어.
-
-        <a href="https://namu.wiki/w/CSS" target="_blank" title="CSS specification">CSS</a>의 C가 Cascading[1]의 약자인데, 이는 상위 요소의 스타일 속성을 자손 요소들에게 상속시켜주는 모습이 DOM 트리구조에서 마치 폭포수처럼 내려가는 모습을 닮았기 때문이다. 다만 예외로 마진, 패딩, 보더 등의 박스모델 관련 속성은 상속되지 않는다. 물론 inherit 값을 줘서 강제로 상속시킬 순 있다
-    </p>
+    <div id="grid">
+        <ol>
+            <li><a href="1.html" title="HTML specification">HTML</a></li>
+            <li><a href="2.CSS.html" title="CSS specification">CSS</a></li>
+            <li><a href="3.JavaScript.html" title="JavaScript specification">JavaScript</a></li>
+        </ol>
+        <div id="article">
+            <h2>CSS이란 무엇인가?</h2>
+            <p>HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 스타일시트 언어.<br>
+            <a href="https://namu.wiki/w/CSS" target="_blank" title="CSS specification">CSS</a>의 C가 Cascading[1]의 약자인데, 이는 상위 요소의 스타일 속성을 자손 요소들에게 상속시켜주는 모습이 DOM 트리구조에서 마치 폭포수처럼 내려가는 모습을 닮았기 때문이다. 다만 예외로 마진, 패딩, 보더 등의 박스모델 관련 속성은 상속되지 않는다. 물론 inherit 값을 줘서 강제로 상속시킬 순 있다</p>
+        </div>
+    </div>
 </body>
 
 </html>
